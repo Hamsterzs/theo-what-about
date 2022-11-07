@@ -13,7 +13,7 @@ const Vods = () => {
       </div>
     );
 
-  if (vods.isFetching) {
+  if (vods.isLoading) {
     return "Loading...";
   }
 
