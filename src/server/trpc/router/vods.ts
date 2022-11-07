@@ -24,6 +24,7 @@ export const vodRouter = router({
           },
         },
       },
+      orderBy: [{ id: "desc" }],
     });
   }),
   create: publicProcedure.input(createVodSchema).mutation(({ ctx, input }) => {

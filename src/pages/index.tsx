@@ -13,6 +13,10 @@ const Vods = () => {
       </div>
     );
 
+  if (vods.isFetching) {
+    return "Loading...";
+  }
+
   return (
     <>
       {vods.data && (
@@ -31,13 +35,7 @@ const Vods = () => {
                 <div className="flex w-2/3 flex-col gap-8">
                   <h1 className="font-bold">{vod.title}</h1>
                   <ul className="h-96 overflow-auto">
-                    {[
-                      ...vod.quotes,
-                      ...vod.quotes,
-                      ...vod.quotes,
-                      ...vod.quotes,
-                      ...vod.quotes,
-                    ].map((q) => {
+                    {vod.quotes.map((q) => {
                       const [seconds, minutes, hours] = q.timeStamp
                         .split(":")
                         .reverse();
